@@ -16,7 +16,7 @@
     </parent>
 
     <modules>
-        <module>maven-generated-module</module>
+        <module>module-spring-boot-rest-test</module>
     </modules>
 
     <properties>
