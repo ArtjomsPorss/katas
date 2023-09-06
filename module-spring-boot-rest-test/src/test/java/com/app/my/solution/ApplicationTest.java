@@ -1,6 +1,6 @@
-package com.app.my;
+package com.app.my.solution;
 
-import com.app.my.dto.HelloDTO;
+import com.app.my.solution.dto.HelloDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

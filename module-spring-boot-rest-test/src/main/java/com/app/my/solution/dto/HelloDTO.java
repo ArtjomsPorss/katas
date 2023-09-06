@@ -1,4 +1,4 @@
-package com.app.my.dto;
+package com.app.my.solution.dto;
 
 public class HelloDTO {
 

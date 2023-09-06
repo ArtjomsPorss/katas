@@ -17,6 +17,8 @@
 
     <modules>
         <module>module-spring-boot-rest-test</module>
+        <module>dp-factory</module>
+        <module>generics</module>
     </modules>
 
     <properties>

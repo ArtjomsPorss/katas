@@ -1,6 +1,6 @@
-package com.app.my.web;
+package com.app.my.solution.web;
 
-import com.app.my.dto.HelloDTO;
+import com.app.my.solution.dto.HelloDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
