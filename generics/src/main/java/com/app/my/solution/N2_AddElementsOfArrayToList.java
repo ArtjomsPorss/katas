@@ -7,6 +7,7 @@ import java.util.List;
 
 public class N2_AddElementsOfArrayToList {
     public static void main(String[] args) {
+        // Shape array containing Shape subclasses to Shape List
         Shape[] arr = new Shape[2];
         arr[0] = new Circle();
         arr[1] = new Square();
@@ -19,10 +20,27 @@ public class N2_AddElementsOfArrayToList {
         lst.forEach(e -> {
             System.out.println(e.draw());
         });
+
+
+        // String array to Object List
+        // because compiler infers most speficic type argument that will make the call type-correct
+        String[] sarr = new String[100];
+        List<Object> lob = new ArrayList<>();
+        addAll(sarr, lob);
+        System.out.println(String.format("string arr to object collection: [%d]", lob.size()));
+
+        // String array to Object List using Generic extends
+        // S extends T = String is subclass of Object
+        String[] sarr1 = new String[100];
+        List<Object> lob1 = new ArrayList<>();
+        addAllST(sarr1, lob1);
+        System.out.println(String.format("string arr to object collection using generic extends: [%d]", lob1.size()));
     }
 
     public static <T> void addAll(T[] arr , Collection<T> lst) {
         lst.addAll(Arrays.asList(arr));
-//        lst.addAll(arr);
+    }
+    public static <T, S extends T> void addAllST(S[] arr , Collection<T> lst) {
+        lst.addAll(Arrays.asList(arr));
     }
 }
