@@ -24,10 +24,11 @@ class AnimalFactory {
         factories.put(Cat.class, new CatFactory());
     }
 
-    public static <T> T get(Type t) {
+    public static <T extends Animal> T get(Class<T> t) {
         if (!factories.containsKey(t)) {
             throw new UnsupportedOperationException(String.format("no factory exists for class:[%s]", t));
         }
+        // probably a wrapper around hashmap to pass type in get method
         IFactory<T> f = factories.get(t);
         return f.get();
     }
@@ -61,7 +62,7 @@ class Cat implements Animal {
 
 class Crow implements Animal {
     public void arr() {
-        System.out.println("arr!");
+        System.out.println("caw!");
     }
 }
 

@@ -1,9 +1,6 @@
 package com.app.my.solution;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class N2_AddElementsOfArrayToList {
     public static void main(String[] args) {
@@ -21,9 +18,8 @@ public class N2_AddElementsOfArrayToList {
             System.out.println(e.draw());
         });
 
-
         // String array to Object List
-        // because compiler infers most speficic type argument that will make the call type-correct
+        // because compiler infers most specific type argument that will make the call type-correct
         String[] sarr = new String[100];
         List<Object> lob = new ArrayList<>();
         addAll(sarr, lob);
@@ -35,6 +31,24 @@ public class N2_AddElementsOfArrayToList {
         List<Object> lob1 = new ArrayList<>();
         addAllST(sarr1, lob1);
         System.out.println(String.format("string arr to object collection using generic extends: [%d]", lob1.size()));
+
+
+        // methods operating on List<Object> can safely take in any type or list
+        List<Object> stringList = new ArrayList<>(List.of("a", "bc", "def"));
+        // can add any types to List of Objects
+        add(stringList);
+        print(stringList);
+    }
+
+    public static void add(Collection<Object> col) {
+        col.add("aaa");
+        col.add(1);
+    }
+
+    public static void print(Collection<Object> objs) {
+        for (Object o : objs) {
+            System.out.println(o);
+        }
     }
 
     public static <T> void addAll(T[] arr , Collection<T> lst) {
@@ -43,4 +57,5 @@ public class N2_AddElementsOfArrayToList {
     public static <T, S extends T> void addAllST(S[] arr , Collection<T> lst) {
         lst.addAll(Arrays.asList(arr));
     }
+
 }
