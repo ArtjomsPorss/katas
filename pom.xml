@@ -22,6 +22,7 @@
         <module>multi-back</module>
         <module>multi-service-tests</module>
         <module>dp-singleton</module>
+        <module>spring-cachedemo</module>
     </modules>
 
     <properties>
